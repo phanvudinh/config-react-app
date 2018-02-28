@@ -2,7 +2,6 @@ import React from 'react'
 import {Link, Route} from 'react-router-dom'
 import Loadable from 'react-loadable'
 import Loading from './Loading'
-// import Content from './Content'
 
 const Content = Loadable({
     loader: () => import(/* webpackChunkName: "content" */ './Content'),
@@ -12,10 +11,6 @@ const Content = Loadable({
 class Detail extends React.Component {
     constructor(props){
         super(props);
-    }
-
-    componentDidMount(){
-        console.log(this.props);
     }
 
     render(){

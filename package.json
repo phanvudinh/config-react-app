@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --progress --colors --config ./webpack.dev.js",
     "stage": "node ./webpack.stage.js",
-    "prod": "webpack --config ./webpack.prod.js"
+    "prod": "webpack --config ./webpack.prod.js",
+    "server": "webpack --config ./webpack.prod.js && node server.js"
   },
   "author": "phanvudinh",
   "license": "ISC",
