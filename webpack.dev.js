@@ -3,11 +3,15 @@ const webpack = require('webpack');
 const common = require('./webpack.common.js');
 
 const dev = merge(common, {
+  output: {publicPath: '/'},
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
     hot: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    stats: {
+      colors: true
+    }
   },
   
   plugins: [
