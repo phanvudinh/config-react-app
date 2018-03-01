@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --progress --colors --config ./webpack.dev.js",
     "stage": "node ./webpack.stage.js",
     "prod": "webpack --config ./webpack.prod.js",
-    "server": "webpack --config ./webpack.prod.js && node server.js"
+    "server": "npm run prod && node server.js"
   },
   "author": "phanvudinh",
   "license": "ISC",
@@ -37,10 +37,12 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "compression-webpack-plugin": "^1.1.10",
     "lodash": "^4.17.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-loadable": "^5.3.1",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "webpack-bundle-analyzer": "^2.11.0"
   }
 }
