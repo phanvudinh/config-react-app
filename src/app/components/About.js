@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { Helmet } from 'react-helmet';
 
 class About extends React.Component {
     state = {total: 0}
@@ -13,6 +14,10 @@ class About extends React.Component {
 
     render(){
         return <div>
+                    <Helmet>
+                        <meta charSet="utf-8" />
+                        <title>About</title>
+                    </Helmet>
                     <div>{this.state.total}</div>
                     <button onClick={this.total.bind(this)}>total</button>
                     <Link to='/detail'>Detail</Link>

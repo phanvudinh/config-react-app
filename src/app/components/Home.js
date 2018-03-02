@@ -1,11 +1,18 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-import add from './function'
+import { Helmet } from 'react-helmet';
 
 class Home extends React.Component {
+    static fetchData({ store }) {
+        return new Promise(resolve => resolve());
+    }
     render(){
         return <div>
-                    <Link to='/about'>About..{add(10,10)}</Link>
+                    <Helmet>
+                        <meta charSet="utf-8" />
+                        <title>Home</title>
+                    </Helmet>
+                    <Link to='/about'>About..</Link>
                </div>
     }
 }

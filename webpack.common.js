@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './src/app/index.js'
+    app: ['babel-polyfill', './src/app/index.js']
   },
 
   plugins: [

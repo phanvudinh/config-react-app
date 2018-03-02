@@ -12,16 +12,28 @@
   "author": "phanvudinh",
   "license": "ISC",
   "babel": {
-    "presets": [["es2015", { "modules": false }], "stage-2", "react"],
+    "presets": [
+      [
+        "es2015",
+        {
+          "modules": false
+        }
+      ],
+      "stage-2",
+      "react"
+    ],
     "env": {
       "production": {
-        "plugins": ["transform-react-remove-prop-types"]
+        "plugins": [
+          "transform-react-remove-prop-types"
+        ]
       }
     }
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.3",
+    "compression-webpack-plugin": "^1.1.10",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
@@ -35,15 +47,20 @@
     "webpack": "^3.0.0",
     "webpack-dev-middleware": "^1.12.2",
     "webpack-dev-server": "^2.9.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "webpack-bundle-analyzer": "^2.11.0"
   },
   "dependencies": {
-    "compression-webpack-plugin": "^1.1.10",
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "lodash": "^4.17.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-helmet": "^5.2.0",
     "react-loadable": "^5.3.1",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
-    "webpack-bundle-analyzer": "^2.11.0"
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2"
   }
 }
