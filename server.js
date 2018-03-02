@@ -91,7 +91,6 @@ function renderFullPage(html, preloadedState, helmet) {
       </head>
       <body>
 		<div id="root">
-		<p>phanvudinh</p>
 		${html}
 		</div>
         <script>
