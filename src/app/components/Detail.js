@@ -2,6 +2,7 @@ import React from 'react'
 import {Link, Route} from 'react-router-dom'
 import Loadable from 'react-loadable'
 import Loading from './Loading'
+import add from './function'
 
 const Content = Loadable({
     loader: () => import(/* webpackChunkName: "content" */ './Content'),
@@ -17,7 +18,7 @@ class Detail extends React.Component {
         const {match} = this.props;
         return <div>
                     <div>Home</div>
-                    <Link to={`${match.url}/info`}>Info</Link>
+                    <Link to={`${match.url}/info`}>Info{add(10,8)}</Link>
                     <Link to={`${match.url}/contacts`}>Contact</Link>
                     <Link to='/'>Home..</Link>
                     <Route path={`${match.url}/:content`} component={Content}/>

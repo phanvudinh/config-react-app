@@ -19,7 +19,12 @@ const prod = merge(common, {
       test: /\.js$|\.css$|\.html$/,
       threshold: 0,
       minRatio: 2
-    })
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      children: true,
+      async: true,
+      minChunks: 2
+    }),
   ]
 });
 
