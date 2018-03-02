@@ -7,7 +7,8 @@
     "dev": "webpack-dev-server --progress --colors --config ./webpack.dev.js",
     "stage": "node ./webpack.stage.js",
     "prod": "webpack --config ./webpack.prod.js",
-    "server": "npm run prod && node server.js"
+    "build": "webpack --progress --colors --config webpack.config.server.js",
+    "server": "npm run prod && npm run build && node dist/server.js"
   },
   "author": "phanvudinh",
   "license": "ISC",
@@ -53,6 +54,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
+    "loadable-components": "^1.1.1",
     "lodash": "^4.17.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -61,6 +63,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "webpack-node-externals": "^1.6.0"
   }
 }

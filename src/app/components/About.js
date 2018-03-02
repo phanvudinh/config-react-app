@@ -3,7 +3,10 @@ import {Link} from 'react-router-dom'
 import { Helmet } from 'react-helmet';
 
 class About extends React.Component {
-    state = {total: 0}
+    constructor(props){
+        super(props)
+        this.state = {total: 0}
+    }
 
     total(){
         import(/* webpackChunkName: "function" */ "./function").then((method) => {
