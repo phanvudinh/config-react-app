@@ -13,6 +13,7 @@ const prod = merge(common, {
       }
     }),
     new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new CompressionPlugin({
       asset: "[path].gz[query]",
       algorithm: "gzip",

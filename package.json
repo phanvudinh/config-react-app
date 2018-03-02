@@ -12,11 +12,12 @@
   "author": "phanvudinh",
   "license": "ISC",
   "babel": {
-    "presets": [
-      "env",
-      "react",
-      "stage-2"
-    ]
+    "presets": [["es2015", { "modules": false }], "stage-2", "react"],
+    "env": {
+      "production": {
+        "plugins": ["transform-react-remove-prop-types"]
+      }
+    }
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
