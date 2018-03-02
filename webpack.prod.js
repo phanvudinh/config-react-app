@@ -18,9 +18,8 @@ const prod = merge(common, {
       algorithm: "gzip",
       test: /\.js$|\.css$|\.html$/,
       threshold: 0,
-      minRatio: 1
+      minRatio: 2
     })
-    // new BundleAnalyzerPlugin()
   ]
 });
 
