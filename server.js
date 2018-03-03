@@ -20,9 +20,10 @@ app.get('*.js|html|css', function (req, res, next) {
     next();
 });
 
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname));
 
 app.get('*', async (req, res) => {
+	console.log("********")
 	try {
 		//create new redux store on each request
 		const store = createStore(reducers, {}, applyMiddleware(thunk));
@@ -84,7 +85,7 @@ function renderFullPage(html, preloadedState, helmet) {
     <!doctype html>
     <html>
       <head>
-        <link rel="icon" href="/dist/favicon.ico" type="image/ico" />
+		<base href="/">
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
         ${helmet.link.toString()}
