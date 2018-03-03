@@ -25,11 +25,13 @@ export default {
         },
         {
             path: '/about',
-            component: About
+            component: About,
+            exact: true
         },
         {
-            path: '/Detail',
-            component: Detail
+            path: '/detail',
+            component: Detail,
+            exact: false
         }
     ]
 } 

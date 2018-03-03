@@ -10,10 +10,10 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      title: 'config-react-app',
-      template: path.resolve(__dirname, 'template.html')
-    }),
+    // new HtmlWebpackPlugin({
+    //   title: 'config-react-app',
+    //   template: path.resolve(__dirname, 'template.html')
+    // }),
     new webpack.optimize.CommonsChunkPlugin({
         name: 'common'
     })
