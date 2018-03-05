@@ -4,11 +4,12 @@
   "description": "config my own react",
   "main": "index.js",
   "scripts": {
+    "init": "npm install",
     "dev": "webpack-dev-server --progress --colors --config ./webpack.dev.js",
     "stage": "node ./webpack.stage.js",
     "prod": "webpack --config ./webpack.prod.js",
     "build": "webpack --progress --colors --config webpack.config.server.js",
-    "server": "npm run prod && npm run build && node dist/server.js"
+    "server": "npm run init && npm run prod && npm run build && node dist/server.js"
   },
   "author": "phanvudinh",
   "license": "ISC",
