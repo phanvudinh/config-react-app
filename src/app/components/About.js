@@ -1,6 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { Helmet } from 'react-helmet';
+import * as actions from '../actions/user-actions'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class About extends React.Component {
     constructor(props){
@@ -13,6 +16,16 @@ class About extends React.Component {
             let add = method.default
             this.setState({total: add(1,5)})
           });
+    }
+
+    componentWillReceiveProps(nextProps){
+        console.log("About component will receive props");
+        console.log(this.props, nextProps)
+    }
+
+    componentDidMount() {
+        console.log("About compoent did mount")
+        this.props.getName(4);
     }
 
     render(){
@@ -28,4 +41,14 @@ class About extends React.Component {
     }
 }
 
-export default About;
+function mapStateToProps(state) {
+    return {
+        ...state.user,
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(actions, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(About);

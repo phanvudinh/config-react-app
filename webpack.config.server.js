@@ -1,5 +1,6 @@
 const nodeExternals = require('webpack-node-externals'),
 path = require('path'),
+webpack = require('webpack'),
 srcPath = path.resolve(__dirname),
 distPath = path.resolve(__dirname, 'dist');
 
@@ -15,6 +16,11 @@ node: {
     __dirname: false,
     __filename: false
 },
+plugins: [
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 1,
+    }),
+],
 module: {
     rules: [
         {
@@ -27,6 +33,5 @@ module: {
         }
     ]
 },
-externals: nodeExternals(),
-devtool: 'source-map'
+externals: nodeExternals()
 };

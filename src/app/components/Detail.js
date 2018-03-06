@@ -21,7 +21,13 @@ class Detail extends React.Component {
         return store.dispatch(actions.getName(1));
     }
 
+    componentWillReceiveProps(nextProps){
+        console.log("component will receive props");
+        console.log(this.props, nextProps)
+    }
+
     componentDidMount() {
+        console.log("compoent did mount")
         this.props.getName(1);
     }
     
@@ -32,7 +38,7 @@ class Detail extends React.Component {
                         <meta charSet="utf-8" />
                         <title>Detail</title>
                     </Helmet>
-                    <div>Detail</div>
+                    <div>{this.props.name}</div>
                     <Link to={`${match.url}/info`}>Info</Link>
                     <Link to={`${match.url}/contacts`}>Contact</Link>
                     <Link to='/'>Home..</Link>
