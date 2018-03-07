@@ -35,7 +35,7 @@ class About extends React.Component {
                         <title>About</title>
                     </Helmet>
                     <div>{this.state.total}</div>
-                    <button onClick={this.total.bind(this)}>total</button>
+                    <button onClick={() => this.props.history.push('/')}>total</button>
                     <Link to='/detail'>Detail</Link>
                 </div>
     }
